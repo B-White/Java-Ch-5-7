@@ -1,0 +1,44 @@
+public class LandTract 
+{
+	private static double tractLength;
+	private static double tractWidth;
+	
+	public LandTract()
+	{
+		tractLength = 0;
+		tractWidth = 0;
+	}
+	
+	public LandTract(double length, double width)
+	{
+		tractLength = length;
+		tractWidth = width;
+	}
+	
+	public static double getArea()
+	{
+		return tractLength * tractWidth;
+	}
+	
+	public static boolean equals(LandTract object2)
+	{
+		boolean status;
+		
+		if (tractLength == object2.tractLength && tractWidth == object2.tractWidth)
+		{
+			status = true;
+		}
+		else 
+		{
+			status = false;
+		}
+		
+		return status;
+	}
+	
+	public String toString()
+	{
+		String str = "The area for this tract is: " + getArea();
+		return str;
+	}
+}

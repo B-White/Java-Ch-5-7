@@ -1,0 +1,52 @@
+import  java.util.Scanner;
+
+public class AverageRainfall
+{
+
+	public static void main(String[] args)
+	{
+		Scanner input = new Scanner(System.in);
+		
+		int numYears;
+		int rainInches = 0;
+		int numMonths = 0;
+		double rainAverage;
+		int year = 1;
+		
+		System.out.println("How many years will be averaged???");
+		numYears = input.nextInt();
+		
+		while (numYears < 1)
+		{
+			System.out.println("Please enter a number greater than 0.");
+			numYears = input.nextInt();
+		}		
+			System.out.println("What are the inches of rain for year ");
+			
+		for (; year <= numYears;year++)
+		{
+				
+			for (int month = 1; month < 13; month++)
+			{
+				System.out.println("Please enter the inches of rainfall for month " + month);
+				rainInches += input.nextInt();
+				
+				while (rainInches < 0)
+				{
+					System.out.println("Please enter a positive number.");
+					rainInches += input.nextInt();
+				}
+				numMonths = month * numYears;
+			}
+			 
+		}
+		rainAverage = (double)rainInches / (double)numMonths;
+		
+		System.out.println("The number of months is: " + numMonths);
+		System.out.println("The total iches of rain is: " + rainInches);
+		System.out.printf("The average inches of rain for the time period is: %.2f",rainAverage);
+		
+		input.close();
+	}
+
+}

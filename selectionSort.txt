@@ -1,0 +1,59 @@
+public class RainFall 
+{
+	private double rainFall[] = new double[12];
+	
+	public void setRainFall(double[] rain)
+	{
+		for(int i = 0; i < rain.length; i++){
+			rainFall[i] = rain[i];
+		}
+	}
+	
+	public double getTotalYearRain()
+	{	
+		double sum = 0;
+		for(int i = 0; i < rainFall.length; i++){
+			sum += rainFall[i];
+		}
+		
+		return sum;
+	}
+	
+	public double getAverageMonthlyRain()
+	{
+		double averageMonthlyRain = 0;
+		averageMonthlyRain = getTotalYearRain() / 12;
+		
+		return averageMonthlyRain;
+	}
+	
+	 public double getSmallest() {
+	        double largest = Double.MIN_VALUE;
+	        double smallest = Double.MAX_VALUE;
+	        for (double number : rainFall) {
+	            if (number > largest) {
+	                largest = number;
+	            }
+	            if (number < smallest) {
+	                smallest = number;
+	            }
+	        }
+	        
+	        return smallest;
+	 	}
+	 
+	 public double getLargest() {
+	        double largest = Double.MIN_VALUE;
+	        double smallest = Double.MAX_VALUE;
+	        for (double number : rainFall) {
+	            if (number > largest) {
+	                largest = number;
+	            }
+	            if (number < smallest) {
+	                smallest = number;
+	            }
+	        }
+	        
+	        return largest;
+	 	}
+}

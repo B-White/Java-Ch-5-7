@@ -1,0 +1,58 @@
+import java.text.DecimalFormat;
+
+public class TeamLeader extends ProductionWorker
+{
+	private double monthlyBonus;
+	private int requiredHours;
+	private int hoursDone;
+	
+	TeamLeader(String n, String num, String date, int sh, double rate, double month, int required, int hours)
+	{
+		super(n,num,date,sh,rate);
+		setMonthlyBonus(month);
+		setRequiredHours(required);
+		setHoursDone(hours);
+	}
+	
+	TeamLeader()
+	{
+		
+	}
+
+	public double getMonthlyBonus() {
+		return monthlyBonus;
+	}
+
+	public void setMonthlyBonus(double monthlyBonus) {
+		this.monthlyBonus = monthlyBonus;
+	}
+
+	public int getRequiredHours() {
+		return requiredHours;
+	}
+
+	public void setRequiredHours(int requiredHours) {
+		this.requiredHours = requiredHours;
+	}
+
+	public int getHoursDone() {
+		return hoursDone;
+	}
+
+	public void setHoursDone(int hoursDone) {
+		this.hoursDone = hoursDone;
+	}
+	
+	public String toString()
+	{
+		DecimalFormat formatter = new DecimalFormat("$#,##0.00");
+		
+		String str = super.toString();
+		
+		str += "\nMonthly bonus: " + formatter.format(monthlyBonus) +
+			   "\nRequired training hours: " + requiredHours + 
+			   "\nHours completed: " + hoursDone;
+		
+		return str;
+	}
+}

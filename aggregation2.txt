@@ -1,0 +1,43 @@
+import java.util.Scanner;
+
+public class LandTractDemo 
+{
+
+	public static void main(String[] args) 
+	{
+		Scanner input = new Scanner(System.in);
+	
+		LandTract tract1, tract2;
+		
+		double length, width;
+		
+		System.out.println("Please enter the dimensions for two tracts of land.");
+		
+		System.out.println("Please enter tract 1's length then width.");
+		length = input.nextDouble();
+		width = input.nextDouble();
+		
+		tract1 = new LandTract(length, width);
+		
+		System.out.println("Please enter tract 2's length and width.");
+		length = input.nextDouble();
+		width = input.nextDouble();
+		
+		tract2 = new LandTract(length, width);
+		
+		System.out.println(tract1.toString());
+		
+		System.out.println(tract2.toString());
+		
+		if (tract1.equals(tract2))
+		{
+			System.out.println("The info entered indicates that the area is the same.");
+		}
+		else 
+		{
+			System.out.println("The area was not the same for these two tracts.");
+		}
+		
+		input.close();
+	}
+}

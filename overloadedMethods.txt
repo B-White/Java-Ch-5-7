@@ -1,0 +1,17 @@
+public class Area 
+{
+	public static double getCalcArea(double r,double pi)
+	{
+		return pi * r * r;
+	}
+	
+	public static int getCalcArea(int w, int l)
+	{
+		return w * l;
+	}
+	
+	public static double getCalcArea(double h, double r,double pi)
+	{
+		return pi * r * r * h;
+	}
+}
